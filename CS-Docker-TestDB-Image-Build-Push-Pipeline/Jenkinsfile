@@ -1,0 +1,92 @@
+pipeline {
+    agent none
+    stages {
+        stage('SVN update CS source code') {
+            agent {
+                label "codeception"
+            }
+            steps {
+                checkout(
+                    [$class: 'SubversionSCM',
+                    additionalCredentials: [],
+                    excludedCommitMessages: '',
+                    excludedRegions: '',
+                    excludedRevprop: '',
+                    excludedUsers: '',
+                    filterChangelog: false,
+                    ignoreDirPropChanges: false,
+                    includedRegions: '',
+                    locations: [
+                        [cancelProcessOnExternalsFail: true,
+                        credentialsId: '90e7e239-48b2-455a-a72e-68522c3e70fd', depthOption: 'infinity',
+                        ignoreExternalsOption: true,
+                        local: 'source',
+                        remote: 'https://svn.contentserv.com/development/trunk']
+                        ],
+                    quietOperation: true,
+                    workspaceUpdater: [$class: 'UpdateUpdater']])
+            }
+        }
+        stage('Start Docker Environment') {
+            agent {
+                label "codeception"
+            }
+            steps {
+                sh 'cat /var/lib/contentserv-cs/cs_docker__password.txt | docker login docker.contentserv.com --username buildmasters --password-stdin'
+                sh 'php -f source/admin.test/testsystem/imagebuild/build.php ${CS_RELEASE} start_system';
+            }
+        }
+        stage('Install CSLive backup') {
+            agent {
+                label "codeception"
+            }
+            steps {
+                sh 'php -f source/admin.test/testsystem/imagebuild/build.php ${CS_RELEASE} change_config';
+                sh 'php -f source/admin.test/testsystem/imagebuild/build.php ${CS_RELEASE} install_backup';
+            }
+        }
+        stage('Update Data Model') {
+            agent {
+                label "codeception"
+            }
+            steps {
+                sh 'php -f source/admin.test/testsystem/imagebuild/build.php ${CS_RELEASE} update_datamodel';
+            }
+        }
+        stage('Create Database Dump') {
+            agent {
+                label "codeception"
+            }
+            steps {
+                sh 'php -f source/admin.test/testsystem/imagebuild/build.php ${CS_RELEASE} create_dump';
+            }
+        }
+        stage('Stop Docker Environment') {
+            agent {
+                label "codeception"
+            }
+            steps {
+                sh 'php -f source/admin.test/testsystem/imagebuild/build.php ${CS_RELEASE} stop_system';
+            }
+        }
+       stage('Build & Push Docker Image') {
+            agent {
+                label "codeception"
+            }
+            steps {
+                sh 'docker build --force-rm -t docker.contentserv.com/cs-dev/mariadb-test:latest source/admin.test/testsystem/imagebuild/docker/';
+                sh 'docker push docker.contentserv.com/cs-dev/mariadb-test:latest';
+            }
+        }
+    }
+    post {
+      failure {
+        emailext (
+          subject: "FAILED: Job '${env.JOB_NAME} (build #${env.BUILD_NUMBER})'",
+          body: """<p>FAILED: Job '${env.JOB_NAME} (build #${env.BUILD_NUMBER})':</p>
+               <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} (build #${env.BUILD_NUMBER})</a>&QUOT;</p>""",
+          to: "buildmasters@contentserv.com"
+        )
+      }
+    }
+}

@@ -1,0 +1,44 @@
+Source: contentserv-cs
+Section: misc
+Priority: optional
+Maintainer: Kirill Peskov <kpeskov@contentserv.com>
+Build-Depends:
+# no actual build takes place, so no dependencies
+Standards-Version: 3.9.2
+Homepage: http://www.contentserv.com
+
+Package: contentserv-cs-deps
+Architecture: all
+Depends: contentserv-cs18.0-deps
+Description: Contentserv-CS dependencies and utilities package (metapackage installing latest stable CS release)
+ This package contains CS Core only
+
+Package: contentserv-cs-core
+Architecture: all
+Depends: contentserv-cs18.0-core
+Description: Contentserv-CS core package (metapackage installing latest stable CS release)
+ This package contains CS Core only
+
+Package: contentserv-cs-live
+Architecture: all
+Depends: contentserv-cs18.0-live
+Description: Contentserv-CS demo project package (metapackage installing latest stable CS release)
+ This package contains CS demo site (CSLive) and corresponding project + database
+
+Package: contentserv-cs-docs
+Architecture: all
+Depends: contentserv-cs18.0-docs
+Description: Contentserv-CS documentation package (metapackage installing latest stable CS release)
+ This package contains CS documentation
+
+Package: contentserv-cs-dev
+Architecture: all
+Depends: contentserv-cs18.0-dev
+Description: Contentserv-CS package for developers and QAs (metapackage installing latest stable CS release)
+ This package contains CS admin.test folder
+
+Package: contentserv-cs-svn
+Architecture: all
+Depends: contentserv-cs18.0-svn
+Description: Contentserv-CS subversion data package for all packages (metapackage installing latest stable CS release)
+ This package contains CS .svn directory tree for the whole project

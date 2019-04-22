@@ -1,0 +1,71 @@
+Template: contentserv-cs-live/activate_cslive
+Type: boolean
+Default: true
+Description: Create new project (restoring from the CSLive template)
+ To create new project, a working database server is essential
+ (local or remote), all necessary names, addresses and access
+ credentials should be provided in following dialogs
+ .
+ If you omit this, you can always create new project later on,
+ using Contentserv web interface
+
+
+Template: contentserv-cs-live/db_host
+Type: string
+Default: localhost
+Description: Database hostname or IP for the new Contentserv CSLive DB
+ Please provide the hostname or IP address of your database server. If
+ database server is not local, don't forget to allow incoming connections
+ on port 3306 from this server
+
+
+Template: contentserv-cs-live/db_name
+Type: string
+Default: CSLive
+Description: Database name to connect to
+ If the database not (yet) exists, we'll try to create it for you,
+ ensure that the correspondig DB user has enough permissions to do that.
+ .
+ Alternatively, you can manually create an empty database using the statement:
+ .
+ CREATE DATABASE <DBNAME> DEFAULT CHARACTER SET UTF8;
+ .
+ and grant all privileges to the CS DB user on this DB:
+ .
+ GRANT ALL ON <DBNAME>.* TO '<dbuser>'@'<this-host-name-or-ip>'
+
+
+Template: contentserv-cs-live/db_table_prefix
+Type: string
+Default: cslive_
+Description: Database table prefix
+ This field is essential and cannot be left empty. Using different table prefixes you can
+ configure Contentserv to run more than one project in one database
+
+
+Template: contentserv-cs-live/db_user
+Type: string
+Default: root
+Description: MySQL/MariaDB user name:
+
+
+Template: contentserv-cs-live/db_password
+Type: password
+Description: Password for the MySQL/MariaDB user:
+
+
+Template: contentserv-cs-live/db_password_again
+Type: password
+Description: Repeat password for the MySQL/MariaDB user:
+
+
+Template: contentserv-cs-live/db_password_mismatch
+Type: error
+Description: Password input error
+ The two passwords you entered were not the same. Please try again.
+
+Template: contentserv-cs-live/cslive_folder_not_exists
+Type: error
+Description: Folder CSLive does not exists
+ The project CSLive can be installed in CSLive folder ONLY and the folder is missing
+

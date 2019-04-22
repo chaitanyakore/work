@@ -1,0 +1,11 @@
+cluster.name: ExportCluster
+node.name: ExportDatabase
+path.repo: ${path.home}/snapshots
+network.host: _site_
+http.port: 9200
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+transport.tcp.port: 9300
+indices.query.bool.max_clause_count: 10240
+xpack.ml.enabled: false
+

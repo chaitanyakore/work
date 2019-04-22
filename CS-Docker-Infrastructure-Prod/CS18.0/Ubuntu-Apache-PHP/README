@@ -1,0 +1,6 @@
+1. You must have admin/  & admin.local/ at "Build Context Directory" .i.e. directory where Dockerfile File exists
+2. Remove .snv folder from both, admin and admin.local (If you want to create an image)
+2. Configure files available in config/ (Add Zabbix Server's IP in zabbix_agentd.conf )
+3. Execute " docker build -t nameforimage.0 . " to create an image (The same image must be configured in .env file of docker-compose)
+4. This will create an Image
+5. This image is now available to accept paramters from docker-compose file 

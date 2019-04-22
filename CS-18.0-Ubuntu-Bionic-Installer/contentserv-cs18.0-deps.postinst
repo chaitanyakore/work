@@ -1,0 +1,113 @@
+#!/bin/bash
+
+set -e
+
+# Source debconf library
+. /usr/share/debconf/confmodule
+
+# Tweaks can come here
+CS_HOST=localhost
+CS_FOLDER="/"
+# These parameters are standard and normally should not be tweaked
+CS_APP=/var/lib/contentserv-cs
+CS_DEFAULT_TEMPLATE=admin/core/samples/default
+CS_APACHE_CONF=/etc/apache2/conf-available/contentserv.conf
+CS_VHOST_CONF=/etc/apache2/sites-available/000-default.conf
+CS_VHOST_TEMPLATE=/var/lib/contentserv-cs/admin/core/samples/apache-vhost/cs-vhost-template.conf
+CS_SIMPLIFIED_INSTALL='/admin/install.php?CreateProject=true&simple=true'
+CS_LICENSE_ACTIVATION='/admin/install.php?License=true'
+CS_PROJECT_INSTALL_LOG=/var/log/cs_project_install.log
+
+
+ARG_1="$1"
+ARG_2="$2"
+
+echo "CS Deps Postinstall Script"
+
+update-alternatives --set php /usr/bin/php7.1
+update-alternatives --set phar /usr/bin/phar7.1
+update-alternatives --set phar.phar /usr/bin/phar.phar7.1
+
+
+# If the postinst script has been called after upgrade, then
+# do not do anything, simpy exit with retval 0
+if ! [ "$2" = "" ];
+then
+    exit 0
+fi
+
+#
+# First install cassandra.so PHP extension from PECL
+#
+
+
+if (pecl install cassandra-1.3.2 | grep -q -i "error");
+then
+    echo "Unable to install cassandra PHP extension"
+    exit 1
+else
+    echo "OK, cassandra PHP extension installed, enabling the extension for all PHP APIs"
+    phpenmod -s ALL cassandra
+fi
+
+#
+# Install cassandra python driver from PyPI
+#
+if (pip install --upgrade cassandra-driver 2>&1 | grep -q -i -E "error|fail");
+then
+    echo "Unable to install Python cassandra-driver"
+    exit 1
+else
+    echo "OK, Python cassandra-driver installed from PyPI"
+fi
+
+#
+# Install cassandra CQLSH from PyPI
+#
+if (pip install --upgrade cqlsh 2>&1 | grep -q -i -E "error|fail");
+then
+    echo "Unable to install cqlsh"
+    exit 1
+else
+    echo "OK, cqlsh succussfully installed from PyPI"
+fi
+
+#
+# Install PyMySQL from PyPI
+#
+if (pip install --upgrade pymysql 2>&1 | grep -q -i -E "error|fail");
+then
+    echo "Unable to install PyMySQL"
+    exit 1
+else
+    echo "OK, PyMySQL succussfully installed from PyPI"
+fi
+
+#
+# Add php configuration tweaks
+#
+if ! phpenmod -s ALL contentserv;
+then
+    echo "Unable to adjust PHP settings"
+    exit 1
+else
+    echo "OK, contentserv.ini added to active PHP config"
+fi
+
+#
+# Enable essential apache modules (will reload it later)
+#
+
+a2enmod expires
+a2enmod rewrite
+a2enmod headers
+a2enmod deflate
+a2enmod filter
+a2enmod status
+a2enmod ldap
+a2enmod vhost_alias
+a2enmod authnz_ldap
+a2enmod proxy
+a2enmod proxy_http
+a2enmod proxy_wstunnel
+service apache2 restart

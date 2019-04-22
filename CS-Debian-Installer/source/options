@@ -1,0 +1,2 @@
+extend-diff-ignore = "\/(\.svn|\.git)\/"
+compression = "xz"

@@ -1,0 +1,3 @@
+index.php    var/lib/contentserv-cs
+admin        var/lib/contentserv-cs
+admin.local  var/lib/contentserv-cs

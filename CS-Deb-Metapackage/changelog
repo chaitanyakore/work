@@ -1,0 +1,55 @@
+contentserv-cs (18.0.0.1-bionic-meta-1) bionic; urgency=medium
+
+  * Deploy to stable, switch to 18.0.0.1
+
+ -- Chaitanya Kore <chaitanya.kore@contentserv.com>  Sat, 15 Dec 2018 18:35:00 +0530
+
+contentserv-cs (17.0.5-xenial-meta-1) xenial; urgency=medium
+
+  * Deploy to stable, switch to 17.0.5
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 09 May 2018 12:30:00 +0200
+
+contentserv-cs (16.1.4-xenial-meta-1) xenial; urgency=medium
+
+  * Deploy to stable, switch to 16.1.4
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Tue, 19 Sep 2017 10:10:00 +0200
+
+contentserv-cs (16.1.3-xenial-meta-4) xenial; urgency=medium
+
+  * Deploy to stable
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Fri, 25 Aug 2017 07:30:00 +0200
+
+contentserv-cs (16.1.3-xenial-meta-3) xenial; urgency=medium
+
+  * Activate new deployment parameter
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Thu, 24 Aug 2017 19:30:00 +0200
+
+contentserv-cs (16.1.3-xenial-meta-1) xenial; urgency=medium
+
+  * Switch to the latest service release 16.1.3
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Thu, 24 Aug 2017 09:30:00 +0200
+
+contentserv-cs (16.1.2-xenial-meta-3) xenial; urgency=medium
+
+  * Package build issue on Debian Stretch, returning back to Jessie
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Mon, 14 Aug 2017 10:45:00 +0200
+
+
+contentserv-cs (16.1.2-xenial-meta-2) xenial; urgency=medium
+
+  * Extended package descriptions
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Mon, 14 Aug 2017 08:45:00 +0200
+
+contentserv-cs (16.1.2-xenial-meta-1) xenial; urgency=medium
+
+  * First attempt to build metapackage
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Fri, 11 Aug 2017 16:45:00 +0200
+

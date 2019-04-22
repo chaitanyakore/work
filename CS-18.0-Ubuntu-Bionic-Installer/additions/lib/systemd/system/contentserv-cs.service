@@ -1,0 +1,11 @@
+[Unit]
+Description=Contentserv CS Daemons
+[Service]
+Type=forking
+Environment="LC_ALL=en_US.UTF-8"
+User=root
+ExecStart=/var/lib/contentserv-cs/admin/core/extensions/exportstaging/java/dist/ExportExecutorNG.sh start
+ExecStop=/var/lib/contentserv-cs/admin/core/extensions/exportstaging/java/dist/ExportExecutorNG.sh stop
+ExecReload=/var/lib/contentserv-cs/admin/core/extensions/exportstaging/java/dist/ExportExecutorNG.sh restart
+[Install]
+WantedBy=multi-user.target

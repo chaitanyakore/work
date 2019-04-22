@@ -1,0 +1,330 @@
+contentserv-cs17.0 (17.0.14-xenial-2) xenial; urgency=medium
+
+  * Second  Build of SR 17.0.14
+
+ --  Chaitanya Kore <chaitanya.kore@contentserv.com>  Thur, 18 Mar 2019 22:55:00 +0530
+
+contentserv-cs17.0 (17.0.14-xenial-1) xenial; urgency=medium
+
+  * First  Build of SR 17.0.14
+
+ --  Chaitanya Kore <chaitanya.kore@contentserv.com>  Thur, 18 Mar 2019 20:30:00 +0530
+
+contentserv-cs17.0 (17.0.13-xenial-8) xenial; urgency=medium
+
+  * Eighth  Build of SR 17.0.13
+
+ --  Chaitanya Kore <chaitanya.kore@contentserv.com>  Thur, 08 Mar 2019 17:30:00 +0530
+
+contentserv-cs17.0 (17.0.13-xenial-7) xenial; urgency=medium
+
+  * Seventh  Build of SR 17.0.13
+
+ --  Chaitanya Kore <chaitanya.kore@contentserv.com>  Thur, 07 Mar 2019 16:50:00 +0530
+
+contentserv-cs17.0 (17.0.13-xenial-6) xenial; urgency=medium
+
+  * Sixth Stable Build of SR 17.0.13
+
+ --  Chaitanya Kore <chaitanya.kore@contentserv.com>  Thur, 22 Feb 2019 14:20:00 +0530
+
+contentserv-cs17.0 (17.0.13-xenial-5) xenial; urgency=medium
+
+  * Fifth Build of SR 17.0.13
+
+ --  Chaitanya Kore <chaitanya.kore@contentserv.com>  Thur, 21 Feb 2019 16:55:00 +0530
+
+contentserv-cs17.0 (17.0.13-xenial-4) xenial; urgency=medium
+
+  * Fourth Build of SR 17.0.13
+
+ --  Chaitanya Kore <chaitanya.kore@contentserv.com>  Thur, 21 Feb 2019 12:05:00 +0530
+
+contentserv-cs17.0 (17.0.13-xenial-3) xenial; urgency=medium
+
+  * Stable Build of SR 17.0.13
+
+ --  Chaitanya Kore <chaitanya.kore@contentsphere.com>  Thur, 14 Feb 2019 15:00:00 +0530
+
+contentserv-cs17.0 (17.0.13-xenial-2) xenial; urgency=medium
+
+  * Stable Build of SR 17.0.13
+
+ --  Chaitanya Kore <chaitanya.kore@contentsphere.com>  Wed, 12 Feb 2019 17:00:00 +0530
+
+contentserv-cs17.0 (17.0.13-xenial-1) xenial; urgency=medium
+
+  * First Build of SR 17.0.13
+
+ --  Chaitanya Kore <chaitanya.kore@contentsphere.com>  Fri, 08 Feb 2019 14:02:00 +0530
+
+contentserv-cs17.0 (17.0.12-xenial-4) xenial; urgency=medium
+
+  * Stable Build of SR 17.0.12
+
+ --  Chaitanya Kore <chaitanya.kore@contentsphere.com>  Mon, 17 Jan 2018 15:35:00 +0530
+
+contentserv-cs17.0 (17.0.12-xenial-3) xenial; urgency=medium
+
+  * Unstable Build of SR 17.0.12 for testing deployed to cs-unstable
+
+ --  Rohit Bhakare <rohit.bhakare@contentserv.com>  Wed, 16 Jan 2019 18:06:00 +0530
+
+contentserv-cs17.0 (17.0.12-xenial-2) xenial; urgency=medium
+
+  * Stable Build of SR 17.0.12
+
+ --  Chaitanya Kore <chaitanya.kore@contentsphere.com>  Mon, 17 Dec 2018 17:45:00 +0530
+
+contentserv-cs17.0 (17.0.12-xenial-1) xenial; urgency=medium
+
+  * Initial Build of SR 17.0.12
+
+ --  Chaitanya Kore <chaitanya.kore@contentsphere.com>  Mon, 17 Dec 2018 16:20:00 +0530
+
+contentserv-cs17.0 (17.0.11-xenial-2) xenial; urgency=medium
+
+  * Stable Build of SR 17.0.11
+
+ --  Chaitanya Kore <chaitanya.kore@contentsphere.com>  Wed, 31 Oct 2018 19:20:00 +0530
+
+contentserv-cs17.0 (17.0.11-xenial-1) xenial; urgency=medium
+
+  * First Build of SR 17.0.11
+
+ --  Chaitanya Kore <chaitanya.kore@contentsphere.com>  Mon, 29 Oct 2018 17:50:00 +0530
+
+contentserv-cs17.0 (17.0.10-xenial-1) xenial; urgency=medium
+
+  * Stable of SR 17.0.10
+
+ --  Chaitanya Kore <chaitanya.kore@contentsphere.com>  Mon, 17 Sep 2018 19:50:00 +0530
+
+contentserv-cs17.0 (17.0.10-xenial-1) xenial; urgency=medium
+
+  * First build SR 17.0.10
+
+ --  Chaitanya Kore <chaitanya.kore@contentsphere.com>  Mon, 17 Sep 2018 15:05:00 +0530
+
+
+contentserv-cs17.0 (17.0.9-xenial-3) xenial; urgency=medium
+
+  * Stable of SR 17.0.9
+
+ -- Chaitanya Kore <chaitanya.kore@contentsphere.com>  Wed, 08 Aug 2018 22:50:00 +0530
+
+
+contentserv-cs17.0 (17.0.9-xenial-2) xenial; urgency=medium
+
+  * Investigating build failure SR 17.0.9 
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 08 Aug 2018 09:50:00 +0200
+
+contentserv-cs17.0 (17.0.9-xenial-1) xenial; urgency=medium
+
+  * First build of SR 17.0.9
+
+ -- Chaitanya Kore <chaitanya.kore@contentsphere.com>  Tue, 07 August 2018 19:00:00 +0200
+
+contentserv-cs17.0 (17.0.8-xenial-3) xenial; urgency=medium
+
+  * Cold Backup Script fix for SR 17.0.8
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Thu, 19 Jul 2018 15:00:00 +0200
+
+
+contentserv-cs17.0 (17.0.8-xenial-2) xenial; urgency=medium
+
+  * Stable of SR 17.0.8
+
+ -- Chaitanya Kore <chaitanya.kore@contentsphere.com>  Mon, 09 Jul 2018 11:00:00 +0200
+
+contentserv-cs17.0 (17.0.8-xenial-1) xenial; urgency=medium
+
+  * First build of SR 17.0.8
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Sun, 08 Jul 2018 23:00:00 +0200
+
+contentserv-cs17.0 (17.0.7-xenial-2) xenial; urgency=medium
+
+  * Stable build of SR 17.0.7
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 13 Jun 2018 12:00:00 +0200
+
+contentserv-cs17.0 (17.0.7-xenial-1) xenial; urgency=medium
+
+  * First build of SR 17.0.7
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 13 Jun 2018 09:15:00 +0200
+
+contentserv-cs17.0 (17.0.6-xenial-3) xenial; urgency=medium
+
+  * Stable build of SR 17.0.6
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Thu, 24 May 2018 10:30:00 +0200
+
+contentserv-cs17.0 (17.0.6-xenial-2) xenial; urgency=medium
+
+  * Second build of SR 17.0.6
+  * Fixing failed cassandra driver bug, added python-wheel
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 23 May 2018 16:30:00 +0200
+
+contentserv-cs17.0 (17.0.6-xenial-1) xenial; urgency=medium
+
+  * First build of SR 17.0.6
+  * Fixing failed cassandra driver bug
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 23 May 2018 12:30:00 +0200
+
+contentserv-cs17.0 (17.0.5-xenial-2) xenial; urgency=medium
+
+  * Stable build of SR 17.0.5
+  * Fixing package split bug (https://contentserv.atlassian.net/browse/CSSUPINT-4354) confirmed,
+    but extra parameters are necessary for apt/apt-get commands to finish the upgrade
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Sun, 15 Apr 2018 15:30:00 +0200
+
+contentserv-cs17.0 (17.0.5-xenial-1) xenial; urgency=medium
+
+  * First build of SR 17.0.5 (unstable)
+  * Fixing package split bug (https://contentserv.atlassian.net/browse/CSSUPINT-4354)
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Sat, 14 Apr 2018 16:30:00 +0200
+
+contentserv-cs17.0 (17.0.4-xenial-2) xenial; urgency=medium
+
+  * Stable build of SR 17.0.4 (Installer Sanity Checks done)
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Sat, 17 Mar 2018 03:00:00 +0200
+
+contentserv-cs17.0 (17.0.4-xenial-1) xenial; urgency=medium
+
+  * First build of SR 17.0.4 (unstable)
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Fri, 16 Mar 2018 16:30:00 +0200
+
+contentserv-cs17.0 (17.0.3.1-xenial-1) xenial; urgency=medium
+
+  * First build of SR 17.0.3.1
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 23 Feb 2018 10:40:00 +0200
+
+contentserv-cs17.0 (17.0.0-xenial-4) xenial; urgency=medium
+
+  * Another permissions fix
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 22 Jan 2018 17:00:00 +0200
+
+contentserv-cs17.0 (17.0.0-xenial-3) xenial; urgency=medium
+
+  * Permissions fix
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 22 Jan 2018 15:55:00 +0200
+
+contentserv-cs17.0 (17.0.0-xenial-2) xenial; urgency=medium
+
+  * Package split, new 'deps' package introduced
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 22 Jan 2018 13:40:00 +0200
+
+contentserv-cs17.0 (17.0.1-xenial-1) xenial; urgency=medium
+
+  * Rollback to CS17.0.1
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 06 Dec 2017 08:40:00 +0200
+
+contentserv-cs17.0 (17.0.1.1-xenial-1) xenial; urgency=medium
+
+  * Service release + hotfix (CS17.0.1.1)
+  * Backup/restore is fully functional
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Tue, 05 Dec 2017 16:40:00 +0200
+ 
+contentserv-cs17.0 (17.0.0-xenial-4) xenial; urgency=medium
+
+  * Fixing missing php7.0-zip module dependency
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Mon, 13 Nov 2017 10:05:00 +0200
+
+contentserv-cs17.0 (17.0.0-xenial-3) xenial; urgency=medium
+
+  * Backup Elastic Search fix (space in the repo name)
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Thu, 09 Nov 2017 15:00:00 +0200
+
+contentserv-cs17.0 (17.0.0-xenial-2) xenial; urgency=medium
+
+  * Deployment target correction
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Sat, 04 Nov 2017 13:35:00 +0200
+
+contentserv-cs17.0 (17.0.0-xenial-1) xenial; urgency=medium
+
+  * CS17.0 officially tagged as release, first attempt to build an installer
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Fri, 03 Nov 2017 15:35:00 +0200
+
+contentserv-cs17.0 (16.99.8-xenial-1) xenial; urgency=medium
+
+  * Lots of bugfixes for ExportExecutorNG.sh (multiproject mode)
+    added PIP installation of Cassandra cqlsh
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Thu, 26 Oct 2017 17:20:00 +0200
+
+contentserv-cs17.0 (16.99.7-xenial-1) xenial; urgency=medium
+
+  * elasticsearch.yml changed to allow snapshots
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Thu, 19 Oct 2017 16:00:00 +0200
+
+contentserv-cs17.0 (16.99.6-xenial-1) xenial; urgency=medium
+
+  * ExportExecutorNG.sh improved (local java processes "smart" detection added)
+  * postinst scripts amended to allow painless upgrade (no project creation 
+    functionality needed in case of upgrade)
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 18 Oct 2017 10:50:00 +0200
+
+contentserv-cs17.0 (16.99.5-xenial-1) xenial; urgency=medium
+
+  * ExportExecutorNG.sh bugfixing (fine tuning, bypassing projects without 
+    *.properties files)
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Tue, 17 Oct 2017 17:50:00 +0200
+
+contentserv-cs17.0 (16.99.4-xenial-1) xenial; urgency=medium
+
+  * ExportExecutorNG.sh bugfixing (loop breakage, log/pid files permissions)
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Tue, 17 Oct 2017 14:35:00 +0200
+
+contentserv-cs17.0 (16.99.3-xenial-1) xenial; urgency=medium
+
+  * Old ExportExecutor.sh restored, new one renamed to ExportExecutorNG.sh
+    systemd service corrected accordingly, log/pid files permissions issue fixed
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Mon, 16 Oct 2017 17:50:00 +0200
+
+contentserv-cs17.0 (16.99.2-xenial-1) xenial; urgency=medium
+
+  * ExportExecutor.sh has been rewritten from scratch
+  * supervisord dependency and configurations removed
+  * systemd .service file added
+  
+ -- Kirill Peskov <kpeskov@contentserv.com>  Mon, 16 Oct 2017 15:00:00 +0200
+
+contentserv-cs17.0 (16.99.1-xenial-1) xenial; urgency=medium
+
+  * First meaningful build for CS17 branch, early alpha state, will be deployed to cs-testing
+  * Placeholders for cs-backup and cs-restore scripts have been added to /usr/bin
+  * Python and PIP pre-dependencies added to the core package
+  * PIP Installation of Python cassandra-driver added to the postinst script
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 11 Oct 2017 16:00:00 +0200
+
+contentserv-cs17.0 (16.99.0-xenial-1) xenial; urgency=medium
+
+  * Initial build for CS17 branch, early alpha state, will be deployed to cs-testing
+
+ -- Kirill Peskov <kpeskov@contentserv.com>  Wed, 20 Sep 2017 08:20:50 +0200

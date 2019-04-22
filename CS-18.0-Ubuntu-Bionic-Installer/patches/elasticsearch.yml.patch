@@ -1,0 +1,11 @@
+--- a/admin.local/lib/elasticsearch/config/elasticsearch.yml	2017-10-19 16:00:55.776639007 +0200
++++ a/admin.local/lib/elasticsearch/config/elasticsearch.yml	2017-10-20 09:34:26.232456410 +0200
+@@ -52,7 +52,7 @@
+ #
+ # Make sure that the `ES_HEAP_SIZE` environment variable is set to about half the memory
+ # available on the system and that the owner of the process is allowed to use this limit.
+- ES_HEAP_SIZE: 8g
++ ES_HEAP_SIZE: 1g
+ # Elasticsearch performs poorly when the system is swapping the memory.
+ #
+ # ---------------------------------- Network -----------------------------------

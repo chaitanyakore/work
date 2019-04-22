@@ -1,0 +1,16 @@
+#!/usr/bin/python
+
+from cassandra.cluster import Cluster
+import string
+
+cluster = Cluster()
+session = cluster.connect()
+keyspaces_list = cluster.metadata.keyspaces
+
+non_system_keyspaces = []
+
+for keyspace in keyspaces_list:
+    print keyspace
+    if string.
+
+print "Keyspaces (non-system):"

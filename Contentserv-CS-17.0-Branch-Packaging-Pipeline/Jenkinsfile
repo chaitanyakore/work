@@ -1,0 +1,76 @@
+#!groovy
+
+pipeline {
+    agent none
+    stages {
+        stage('Build .deb packages') {
+            agent {
+                dockerfile { 
+                    dir 'deb-packager'
+                    args '-v /Jenkins-CI/tools:/Jenkins-CI/tools' 
+                }
+            }
+            steps {
+                emailext (
+                    subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                    body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+                      <p>Will deploy to cs-testing</p>
+                      <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+                    to: "buildmasters@contentserv.com"
+                )
+                dir('www') {
+                    checkout poll: true, scm: [$class: 'SubversionSCM', filterChangelog: false, \
+                        ignoreDirPropChanges: false, \
+                        locations: [[credentialsId: '90e7e239-48b2-455a-a72e-68522c3e70fd', \
+                        depthOption: 'infinity', ignoreExternalsOption: false, \
+                        local: '.', remote: 'https://svn.contentserv.com/development/branches/CS17/CS17.0/']], \
+                        workspaceUpdater: [$class: 'UpdateUpdater']]
+                }
+                dir('test-tools') {
+                    checkout poll: false, scm: [$class: 'GitSCM', \
+                        branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, \
+                        extensions: [], submoduleCfg: [], \
+                        userRemoteConfigs: [[credentialsId: 'dfa6f5a3-608c-4f05-bb23-3c096c4cc430', \
+                        url: 'https://mrjenkins@git.contentserv.intern/DevOps/Deployment/CS-Jenkins-Slave-Tools']]]
+                }
+                dir('www/debian') {
+                    checkout poll: false, scm: [$class: 'GitSCM', \
+                        branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, \
+                        extensions: [], submoduleCfg: [], \
+                        userRemoteConfigs: [[credentialsId: 'dfa6f5a3-608c-4f05-bb23-3c096c4cc430', \
+                        url: 'https://mrjenkins@git.contentserv.intern/DevOps/Deployment/CS-17.0-Ubuntu-Xenial-Installer']]]
+                }
+                sh 'rm -f *.deb *.changes || true'
+                sh 'cd www && dpkg-buildpackage -b -i -uc -us'
+            }
+        }
+        stage('Submit to APT Repository') {
+            agent any
+            steps {
+                sh 'rm -f /mnt/apt-incoming/* || true'
+                sh 'mv -f *.deb /mnt/apt-incoming'
+                sh 'mv -f *.changes /mnt/apt-incoming'
+                sh "ssh root@git.contentserv.intern /usr/local/bin/add-to-repo xenial cs-testing"
+            }
+        }
+    }
+    post {
+        success {
+            emailext (
+                subject: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                body: """<p>SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+                  <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+                to: "buildmasters@contentserv.com"
+            )
+        }
+        failure {
+            emailext (
+                subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                body: """<p>FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+                  <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+                to: "buildmasters@contentserv.com"
+            )
+        }
+    }
+}
+

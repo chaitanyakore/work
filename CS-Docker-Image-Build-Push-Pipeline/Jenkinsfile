@@ -1,0 +1,50 @@
+#!groovy
+
+pipeline {
+    agent none
+    stages {
+        stage('Git Pull Dockerfile') {
+            agent {
+                dockerfile {
+                    dir 'deb-packager'
+                }
+            }
+            steps {
+                dir("Docker-CS${CS_RELEASE}") {
+                    checkout poll: false, scm: [$class: 'GitSCM', \
+                        branches: [[name: "*/master"]], doGenerateSubmoduleConfigurations: false, \
+                        extensions: [], submoduleCfg: [], \
+                        userRemoteConfigs: [[credentialsId: 'dfa6f5a3-608c-4f05-bb23-3c096c4cc430', \
+                        url: 'https://mrjenkins@git.contentserv.intern/DevOps/Deployment/CS-Docker-Infrastructure-${ENV_TYPE}']]]
+                }
+            }
+        }
+
+        stage('Build Docker Images') {
+            agent any
+            steps {
+                sh 'touch test1'
+                sh 'cp -f test1 /mnt/Docker-push-dir/'
+                sh "cd Docker-CS${CS_RELEASE}/CS${CS_RELEASE} && make build-all"
+            }
+        }
+
+        stage('Submit Docker Images to Docker registry') {
+            agent any
+            steps {
+                sh "cat /Jenkins-CI/cs_docker__password.txt | docker login docker.contentserv.com --username buildmasters --password-stdin"
+                sh "cd Docker-CS${CS_RELEASE}/CS${CS_RELEASE} && make push-all"
+            }
+        }
+    }
+    post {
+        failure {
+            emailext (
+                subject: "FAILED: Job '${env.JOB_NAME} (build #${env.BUILD_NUMBER})'",
+                body: """<p>FAILED: Job '${env.JOB_NAME} (build #${env.BUILD_NUMBER})':</p>
+                  <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} (build #${env.BUILD_NUMBER})</a>&QUOT;</p>""",
+                to: "buildmasters@contentserv.com"
+            )
+        }
+    }
+}

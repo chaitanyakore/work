@@ -1,0 +1,39 @@
+#!groovy
+
+pipeline {
+    agent {
+        dockerfile { 
+            args '-v /Jenkins-CI/tools:/Jenkins-CI/tools' 
+        }
+    }
+	stages {
+		stage('Additional Tools Checkout'){
+			steps {
+			    dir('test-tools') {
+				    checkout poll: false, scm: [$class: 'GitSCM', \
+			             branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, \
+                         extensions: [], submoduleCfg: [], \
+                         userRemoteConfigs: [[credentialsId: 'dfa6f5a3-608c-4f05-bb23-3c096c4cc430', \
+                         url: 'https://mrjenkins@git.contentserv.intern/DevOps/Deployment/CS-Jenkins-Slave-Tools']]]
+                }
+			}
+		}
+
+		stage('Test run') {
+			steps {
+                sh './bootstrap-cs.sh -h'
+                sh 'env'
+            }
+        }
+
+        stage('Test Suite') {
+                        environment {
+                            DISPLAY = ":10.0"
+                        }
+                        steps {
+                            sh 'echo $DISPLAY'
+                        }
+        }
+	}
+}
+

@@ -1,0 +1,4 @@
+debian/additions/etc/apache2/conf-available/contentserv.conf            etc/apache2/conf-available
+debian/additions/etc/apache2/sites-available/cs-vhost-template.conf     var/lib/contentserv-cs/admin/core/samples/apache-vhost
+debian/additions/etc/php/5.6/mods-available                             etc/php/5.6
+debian/additions/etc/mysql                                              etc
