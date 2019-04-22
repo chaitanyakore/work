@@ -1,0 +1,14 @@
+---
+# Common setup.
+# First install essential OS-level packages
+- import_tasks: install-packages.yml
+
+- import_tasks: adjust-limits.yml
+
+# - include_tasks: create-system-users.yml
+#  with_items: "{{ system_users }}"
+#  when: system_users is defined
+#  vars:
+#    create_username: "{{ item.username }}"
+#    create_password: "{{ item.password }}"
+#    create_comment: "{{ item.comment }}"

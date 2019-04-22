@@ -1,0 +1,11 @@
+---
+- name: Update all packages to the latest version (with option dist-upgrade)
+  apt:
+    update_cache: yes
+    cache_valid_time: 900
+    upgrade: dist
+
+- name: Install Hypervisor-specific essential packages
+  apt: name={{ item }} state=latest update_cache=yes cache_valid_time=900
+  with_items:
+    - certbot

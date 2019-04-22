@@ -1,0 +1,28 @@
+---
+mysql_user_name: root
+mysql_user_password: "vF$9F6-"2T%;"
+
+mysql_root_username: root
+mysql_root_password: "vF$9F6-"2T%;"
+
+mysql_users:
+  - name: dbroot
+    host: "%"
+    password: "vF$9F6-"2T%;"
+    priv: "*.*:ALL"
+
+mysql_root_password_update: no
+
+mysql_lower_case_table_names: "1"
+
+mysql_query_cache_type: "1"
+mysql_query_cache_size: "128M"
+mysql_query_cache_limit: "1M"
+mysql_max_connections: "251"
+
+csalive_zabbix_hostname: 'JUMBO_ACC_DB'
+csalive_zabbix_extras: |
+    UserParameter=mysql.status[*],echo "show global status where Variable_name='$1';" | HOME=/var/lib/zabbix mysql -N | awk '{print $$2}'
+    UserParameter=mysql.ping,HOME=/var/lib/zabbix mysqladmin ping | grep -c alive
+    UserParameter=mysql.version,mysql -V
+

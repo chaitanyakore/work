@@ -1,0 +1,23 @@
+################################################################################
+# This file is managed by Ansible, any manual modifications may be overwritten #
+################################################################################
+
+PidFile={{ csalive_zabbix_pidfile }}
+LogFile={{ csalive_zabbix_logfile }}
+LogFileSize={{ csalive_zabbix_logfilesize }}
+DebugLevel={{ csalive_zabbix_debuglevel }}
+Server={{ csalive_zabbix_server }}
+StartAgents={{ csalive_zabbix_startagents }}
+ServerActive={{ csalive_zabbix_serveractive }}
+
+Hostname={{ csalive_zabbix_hostname }}
+
+{% if csalive_zabbix_userparameter is defined %}
+UserParameter={{ csalive_zabbix_userparameter }}
+{% endif %}
+
+{% if csalive_zabbix_extras is defined %}
+{{ csalive_zabbix_extras }}
+{% endif %}
+
+

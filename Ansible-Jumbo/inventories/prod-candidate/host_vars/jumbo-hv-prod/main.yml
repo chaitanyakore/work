@@ -1,0 +1,5 @@
+---
+nfs_exports: 
+  - "/export/cs_volumes 192.168.135.0/24(rw,sync,no_root_squash)"
+
+csalive_zabbix_hostname: 'JUMBO_HOST_01'

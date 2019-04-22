@@ -1,0 +1,15 @@
+---
+- name: Install supervisor
+  apt: 
+    name: supervisor
+    state: latest
+    update_cache: yes
+    cache_valid_time: 900
+
+- name: Copy configs (host-dependend)
+  copy:
+    src: "./files/{{ ansible_nodename }}/etc/supervisor/"
+    dest: "/etc/supervisor"
+    owner: root
+    group: root
+  notify: Restart Supervisor

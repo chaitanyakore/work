@@ -1,0 +1,17 @@
+---
+# Copy CS project configuration/credential files
+- name: Copy Contentserv-CS *.properties files
+  copy:
+    src: "./files/{{ ansible_nodename }}/contentserv-cs/exportstaging-properties/"
+    dest: /var/www/CONTENTSERV/Jumbo_Prod/admin/core/extensions/exportstaging/java/dist/properties
+    owner: www-data
+    group: www-data
+    mode: 0644
+
+- name: Copy Contentserv-CS config.php
+  copy:
+    src: ./files/{{ ansible_nodename }}/contentserv-cs/config.php
+    dest: /var/www/CONTENTSERV/Jumbo_Prod/jumbo/data/config.php
+    owner: www-data
+    group: www-data
+    mode: 0444

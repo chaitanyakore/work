@@ -1,0 +1,10 @@
+---
+- name: Add Contentserv APT Key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: '1D6B9779'
+- name: Add Contentserv repo
+  apt_repository:
+    repo: deb https://"mrjenkins@contentserv.intern":"Bu1ldM@$t3r"@apt.contentserv.com/ xenial cs-main cs-3rdparty cs-backports
+    state: present
+    filename: contentserv-cs

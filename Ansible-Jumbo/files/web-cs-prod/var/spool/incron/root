@@ -1,0 +1,16 @@
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/Dokumente IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/Dokumente/Datenblätter IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/Dokumente/Datenblätter/Sicherheitsdatenblätter IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/Dokumente/Datenblätter/Energy\ Label/ IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/Dokumente/Datenblätter/Konformitätserklärungen IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/Dokumente/Datenblätter/Leistungserklärungen IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/Dokumente/Datenblätter/Technische\ Datenblätter IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/Dokumente/Datenblätter/Technische\ Datenblätter/Verweistabellen IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/Dokumente/JUMBO\ allgemein/ IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/Dokumente/youdoo\ Magazin/ IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/Dokumente/youdoo\ Magazin/JUMBO-Kataloge IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/SAP/Hotfolder IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Home/TMS IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/SAP/MDE-Bilder/MDE-Bild-Archiv IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/SAP/MDE-Bilder/2_PI_MDE IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#
+/var/www/CONTENTSERV/Jumbo_Prod/jumbo/volumes/Images/AssetReplacement/AssetReplacement_HotFolder IN_CLOSE_WRITE /opt/incron/fix_permissions.sh $@/$#

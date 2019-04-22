@@ -1,0 +1,15 @@
+---
+# From Galaxy
+# Apache role by Geerling
+- src: geerlingguy.apache
+
+# MySQL/MariaDB role by Geerling
+- src: geerlingguy.mysql
+
+# NFS Server role by Geerling
+- src: geerlingguy.nfs
+
+# From private Git
+- name: contentserv.php-5.6
+  src: https://mrjenkins:ef710af96d5551de25c7ebf09969483ef1711c47@git.contentserv.com/DevOps/ConfigManagement/Ansible/Shared/ansible-role-php-5.6-for-cs
+  scm: git

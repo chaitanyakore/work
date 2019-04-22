@@ -1,0 +1,15 @@
+---
+- include_tasks: create-users.yml
+  with_items: "{{ system_users }}"
+  when: system_users is defined
+  vars:
+    create_username: "{{ item.username }}"
+    create_password: "{{ item.password }}"
+    create_comment: "{{ item.comment }}"
+    create_uid: "{{ item.uid }}"
+    create_shell: "{{ item.shell }}"
+    create_home: "{{ item.home }}"
+
+- include_tasks: configure-incron.yml
+
+- include_tasks: configure-cron.yml

@@ -1,0 +1,8 @@
+---
+# Install ElasticSearch from the bundle
+- name: Install ElasticSearch to /opt/elasticsearch
+  copy:
+    src: ./files/bundles/elasticsearch/
+    dest: /opt/elasticsearch
+    owner: www-data
+    group: www-data

@@ -1,0 +1,12 @@
+---
+# Create user with given name and password hash
+- name: Ensure user "{{ create_username }}" exists and update password if needed
+  user:
+    name: "{{ create_username }}"
+    comment: "{{ create_comment }}"
+    password: "{{ create_password }}"
+    shell: "{{ create_shell }}"
+    home: "{{ create_home }}"
+    uid: "{{ create_uid }}"
+    state: present
+    
