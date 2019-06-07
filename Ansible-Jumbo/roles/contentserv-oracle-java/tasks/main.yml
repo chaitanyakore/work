@@ -1,7 +1,0 @@
----
-- name: Install Oracle Java 8 (headless)
-  apt:
-    name: oracle-java8-server-jre
-    update_cache: yes
-    state: latest
-    cache_valid_time: 900

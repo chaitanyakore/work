@@ -1,4 +1,0 @@
----
-dependencies:
-  - { role: contentserv-apt-repo }
-  - { role: contentserv.php-5.6 }

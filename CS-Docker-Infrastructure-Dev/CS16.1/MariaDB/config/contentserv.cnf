@@ -1,7 +1,0 @@
-[mysqld]
-bind-address = 0.0.0.0
-lower_case_table_names = 1
-query_cache_limit = 1M
-query_cache_type = 1
-query_cache_size = 64M
-max_allowed_packet = 64M

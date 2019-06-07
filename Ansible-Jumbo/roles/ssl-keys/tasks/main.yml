@@ -1,8 +1,0 @@
----
-- name: Set Apache SSL-keys for Contentserv-CS
-  copy:
-    src: "./files/{{ ansible_nodename }}/etc/apache2/ssl/"
-    dest: /etc/apache2/ssl
-    owner: root
-    group: root
-    mode: 0644

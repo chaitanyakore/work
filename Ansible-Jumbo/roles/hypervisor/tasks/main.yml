@@ -1,5 +1,0 @@
----
-# Common setup.
-# First install essential OS-level packages
-- import_tasks: install-packages.yml
-
